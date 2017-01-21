@@ -14,7 +14,8 @@
     $scope.checkIfTooMuch = function () {
         if($scope.dishData){
           var commaTrimmedDishData = trimCommas($scope.dishData);
-          var dishArray = commaTrimmedDishData.split(/,+/);
+          var dishArray = commaTrimmedDishData.split(/(?:\s*,+)+/);
+          console.log(dishArray);
           if (dishArray.length <= 3){
               $scope.message = ENJOY_MESSAGE;
           } else{
