@@ -7,19 +7,21 @@
   LunchCheckController.$inject = ['$scope'];
 
   function LunchCheckController ($scope) {
+    var ENJOY_MESSAGE = "Enjoy!";
+    var TOO_MUCH_MESSAGE = "Too much!";
+    var MISSING_DATA_MESSAGE = "Please enter data first";
     $scope.dishData = "";
-
     $scope.checkIfTooMuch = function () {
         if($scope.dishData){
           var commaTrimmedDishData = trimCommas($scope.dishData);
-          var dishArray = commaTrimmedDishData.split(/,+/);          
+          var dishArray = commaTrimmedDishData.split(/,+/);
           if (dishArray.length <= 3){
-              $scope.info = "Enjoy!"
+              $scope.message = ENJOY_MESSAGE;
           } else{
-              $scope.info = "Too much!"
+              $scope.message = TOO_MUCH_MESSAGE;
           }
         } else{
-          $scope.info = "Please enter data first"
+          $scope.message = MISSING_DATA_MESSAGE;
         }
     };
 
