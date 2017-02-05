@@ -5,14 +5,23 @@
     </tr>
   </thead>
   <tbody>
-    <tr style="height:2em" class="row" ng-repeat-start="result in found.items">
-      <td>
+    <th align="left"></th>
+    <th align="left" ng-show='found.items && found.items.length !== 0'>Menu Name</th>
+    <th align="left" ng-show='found.items && found.items.length !== 0'>Short Name</th>
+    <th align="left"></th>
+    <tr align="left" style="height:2em" class="row" ng-repeat-start="result in found.items">
+      <td align="left">
         <a class="glyphicon glyphicon-hand-right"
            href="#" ng-click="showDetails = ! showDetails">
         {{ result.name }}
         </a>
       </td>
-      <td>
+      <td align="left">
+        <span>
+        {{ result.short_name }}
+        </span>
+      </td>
+      <td align="left">
         <button class="btn-primary btn-xs"
               ng-click='found.onRemove({index: $index});'>Remove</button>
       </td>
