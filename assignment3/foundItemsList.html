@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <h3>Menu Narrow Down Result</h3>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="height:2em" class="row" ng-repeat-start="result in found.items">
+      <td>
+        <a class="glyphicon glyphicon-hand-right"
+           href="#" ng-click="showDetails = ! showDetails">
+        {{ result.name }}
+        </a>
+      </td>
+      <td>
+        <button class="btn-primary btn-xs"
+              ng-click='found.onRemove({index: $index});'>Remove</button>
+      </td>
+    </tr>
+    <tr ng-show="showDetails" ng-repeat-end="">
+      <td colspan="3">{{ result.description }}</td>
+    </tr>
+  </tbody>
+</table>
