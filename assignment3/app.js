@@ -6,7 +6,7 @@
   service('MenuSearchService', MenuSearchService).
   filter('searchTerm', SearchTermFilter).
   directive('foundItems', FoundItemsDirective).
-  constant('MenuApiBasePath', "http://davids-restaurant.herokuapp.com").
+  constant('MenuApiBasePath', "https://davids-restaurant.herokuapp.com").
   constant('MenuApiMenuItemsPath', "/menu_items.json");
 
   NarrowItDownController.$inject = ['MenuSearchService'];
