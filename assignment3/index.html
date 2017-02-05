@@ -23,8 +23,13 @@
     </div>
     <br></br>
     <found-items items='narrow.found'
-                 on-remove='narrow.removeFromList(index)'
-                 keyword='{{narrow.searchTerm}}'></found-items>
+                 on-remove='narrow.removeFromList(index)'>
+    </found-items>
+    <div class="alert-warning" ng-if="narrow.isEmpty">
+      <strong>
+        No search results available
+      </strong>
+    </div>
   </div>
 
 </body>

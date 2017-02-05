@@ -19,6 +19,7 @@
       var promise = MenuSearchService.getMatchedMenuItems(narrow.searchTerm);
       promise.then(function (response)
         {
+        narrow.isEmpty = response.length === 0;
         narrow.found = response;
         }).catch(function (error)
         {
@@ -60,7 +61,6 @@ function FoundItemsDirective()
     templateUrl: 'foundItemsList.html',
     scope: {
       items: '<',
-      keyword: '@',
       onRemove: '&'
     },
     controller: FoundItemsDirectiveController,
