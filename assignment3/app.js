@@ -16,15 +16,23 @@
     narrow.searchTerm = "";
     narrow.getMatchedMenuItems = function()
       {
-      var promise = MenuSearchService.getMatchedMenuItems(narrow.searchTerm);
-      promise.then(function (response)
+      if (narrow.searchTerm)
         {
-        narrow.isEmpty = response.length === 0;
-        narrow.found = response;
-        }).catch(function (error)
+        var promise = MenuSearchService.getMatchedMenuItems(narrow.searchTerm);
+        promise.then(function (response)
+          {
+          narrow.isEmpty = response.length === 0;
+          narrow.found = response;
+          }).catch(function (error)
+          {
+          console.log(error.message);
+          });
+        }
+      else
         {
-        console.log(error.message);
-        });
+        narrow.found = [];
+        narrow.isEmpty = true;
+        }
       };
     narrow.removeFromList = function(index)
       {
