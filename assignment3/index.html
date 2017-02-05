@@ -22,9 +22,9 @@
       </button>
     </div>
     <br></br>
-    <!-- found-items should be implemented as a component -->
     <found-items items='narrow.found'
-                 on-remove='narrow.removeFromList(index)'></found-items>
+                 on-remove='narrow.removeFromList(index)'
+                 keyword='{{narrow.searchTerm}}'></found-items>
   </div>
 
 </body>

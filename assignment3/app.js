@@ -60,6 +60,7 @@ function FoundItemsDirective()
     templateUrl: 'foundItemsList.html',
     scope: {
       items: '<',
+      keyword: '@',
       onRemove: '&'
     },
     controller: FoundItemsDirectiveController,
