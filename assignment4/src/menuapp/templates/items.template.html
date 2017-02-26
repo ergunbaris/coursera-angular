@@ -1,0 +1,29 @@
+<table>  
+  <tbody>
+    <th align="left"></th>
+    <th align="left">Name</th>
+    <th align="left">Description</th>
+    <th align="left">Price</th>
+    <tr align="left" style="height:2em" class="row" ng-repeat="item in $ctrl.items">
+      <td align="left">
+        <span>
+        </span>
+      </td>
+      <td align="left">
+        <div>
+        {{ item.name }}
+        </div>
+      </td>
+      <td align="left">
+        <span>
+        {{ item.description }}
+        </span>
+      </td>
+      <td align="left">
+        <span>
+        {{ item.price_large }}
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
